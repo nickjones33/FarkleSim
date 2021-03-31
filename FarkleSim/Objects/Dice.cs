@@ -1,4 +1,5 @@
 ﻿using FarkleSim.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,20 +24,23 @@ namespace FarkleSim.Objects
         {
             DieArray[i].LockDie();
         }
-        public string PrintPlays()
+        public void PrintPlays()
         {
             StringBuilder rtn = new();
             rtn.Append("Plays: ");
 
             Scorer scorer = new Scorer(DieArray);
-            var plays = scorer.GetPlays();
-            foreach (var play in plays)
-            {
-                rtn.Append($"({play.Name}: {play.Value}), ");
+            var plays = scorer.GetPlays().OrderByDescending(p => p.Value);
+            if (plays.Any()) {
+
+                foreach (var play in plays)
+                {
+                    rtn.Append($"({play.Name}: {play.Value}), ");
+                }
+                Console.WriteLine(rtn.ToString());
             }
-            return rtn.ToString();
         }
-        public string PrintContents()
+        public void PrintContents()
         {
             StringBuilder rtn = new();
             rtn.Append("Player's Dice Info ");
@@ -60,7 +64,10 @@ namespace FarkleSim.Objects
                 rtn.Remove(rtn.Length - 1, 1);
                 rtn.Append("]; ");
             }
-            return rtn.ToString();
+            if (LockedDice.Any() || UnlockedDice.Any())
+            {
+                Console.WriteLine(rtn.ToString());
+            }
         }
         private List<Die> DieArray { get; set; }
         public List<Die> LockedDice => DieArray.Where(d => d.Locked).ToList();

@@ -10,8 +10,8 @@ namespace FarkleSim
             {
                 var player = new Objects.Player();
                 player.StartTurn();
-                Console.WriteLine(player.Dice.PrintContents());
-                Console.WriteLine(player.Dice.PrintPlays());
+                player.Dice.PrintContents();
+                player.Dice.PrintPlays();
             }
         }
     }

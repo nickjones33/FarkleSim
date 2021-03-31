@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Text;
-
-namespace FarkleSim.Objects
+﻿namespace FarkleSim.Objects
 {
     public class Player
     {

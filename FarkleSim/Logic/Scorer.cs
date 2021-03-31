@@ -13,19 +13,19 @@ namespace FarkleSim.Logic
         public List<ScoringCombination> GetPlays()
         {
             var rtn = new List<ScoringCombination>();
-            if (Combinations.ThreeOfAKind.Ace(_dice)) rtn.Add(new ScoringCombination("Three of a kind - Aces", 300));
-            if (Combinations.ThreeOfAKind.Two(_dice)) rtn.Add(new ScoringCombination("Three of a kind - Twos", 200));
-            if (Combinations.ThreeOfAKind.Three(_dice)) rtn.Add(new ScoringCombination("Three of a kind - Threes", 300));
-            if (Combinations.ThreeOfAKind.Four(_dice)) rtn.Add(new ScoringCombination("Three of a kind - Fours", 400));
-            if (Combinations.ThreeOfAKind.Five(_dice)) rtn.Add(new ScoringCombination("Three of a kind - Fives", 500));
-            if (Combinations.ThreeOfAKind.Six(_dice)) rtn.Add(new ScoringCombination("Three of a kind - Sixes", 600));
-            if (Combinations.FourOfAKind(_dice)) rtn.Add(new ScoringCombination("Four of a kind", 1000));
-            if (Combinations.FiveOfAKind(_dice)) rtn.Add(new ScoringCombination("Five of a kind", 2000));
-            if (Combinations.SixOfAKind(_dice)) rtn.Add(new ScoringCombination("Six of a kind", 3000));
-            if (Combinations.Straight(_dice)) rtn.Add(new ScoringCombination("Straight 1-6", 1500));
-            if (Combinations.ThreePairs(_dice)) rtn.Add(new ScoringCombination("Three Pairs", 1500));
-            if (Combinations.TwoTriplets(_dice)) rtn.Add(new ScoringCombination("Two Triplets", 2500));
-            if (Combinations.FourWithPair(_dice)) rtn.Add(new ScoringCombination("Four of a kind and a Pair", 1500));
+            if (Combinations.ThreeOfAKind.Ace(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreeOfAKind_Aces));
+            if (Combinations.ThreeOfAKind.Two(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreeOfAKind_Twos));
+            if (Combinations.ThreeOfAKind.Three(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreeOfAKind_Threes));
+            if (Combinations.ThreeOfAKind.Four(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreeOfAKind_Fours));
+            if (Combinations.ThreeOfAKind.Five(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreeOfAKind_Fives));
+            if (Combinations.ThreeOfAKind.Six(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreeOfAKind_Sixes));
+            if (Combinations.FourOfAKind(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.FourOfAKind));
+            if (Combinations.FiveOfAKind(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.FiveOfAKind));
+            if (Combinations.SixOfAKind(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.SixOfAKind));
+            if (Combinations.Straight(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.Straight));
+            if (Combinations.ThreePairs(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.ThreePairs));
+            if (Combinations.TwoTriplets(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.TwoTriplets));
+            if (Combinations.FourWithPair(_dice)) rtn.Add(new ScoringCombination(ScoringCombinations.FourAndPair));
             return rtn;
         }
     }    

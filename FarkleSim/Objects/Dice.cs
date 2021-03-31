@@ -33,9 +33,9 @@ namespace FarkleSim.Objects
             var plays = scorer.GetPlays().OrderByDescending(p => p.Value);
             if (plays.Any()) {
 
-                foreach (var play in plays)
+                foreach (var scoreCombination in plays)
                 {
-                    rtn.Append($"({play.Name}: {play.Value}), ");
+                    rtn.Append($"({scoreCombination.Label}: {scoreCombination.Value}), ");
                 }
                 Console.WriteLine(rtn.ToString());
             }
